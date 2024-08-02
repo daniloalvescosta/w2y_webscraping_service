@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: w2y_webscraping_service_development
+
+test:
+  <<: *default
+  database: w2y_webscraping_service_test
+
+production:
+  <<: *default
+  database: w2y_webscraping_service_production
+  username: w2y_webscraping_service
+  password: <%= ENV["W2Y_WEBSCRAPING_SERVICE_DATABASE_PASSWORD"] %>
