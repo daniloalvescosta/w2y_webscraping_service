@@ -37,7 +37,8 @@ class VehicleScraperWorker
         response = agent.get(url, [], nil, headers)
 
         if response.code.to_i == 200
-          task.update(status: "in_progress")
+          notification(task, "in_progress")
+
           data = JSON.parse(response.body)
           data['SearchResults'].each do |item|
             vehicle = Vehicle.create(
@@ -51,12 +52,23 @@ class VehicleScraperWorker
           puts "concluido"
         end
       rescue => e
-        task.update(status: "failure")
+        notification(task, "failure")
         puts "Erro na página #{page}: #{e.message}"
       end
 
-      task.update(status: "complete") if task.vehicles.size == 100
+      notification(task, "complete") if task.vehicles.size == 100
       sleep(120) if task.vehicles.size != 100
     end
+  end
+
+  private
+
+  def notification(task, status)
+    task.update(status: status)
+    NotificationWorker.perform_async(options = {
+      task_uuid: task.uuid,
+      user_email: task.user_email,
+      status: status
+    })
   end
 end

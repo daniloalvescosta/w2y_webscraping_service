@@ -9,6 +9,12 @@ class VehiclesController < ApplicationController
       status: "pending"
       )
 
+    NotificationWorker.perform_async(options = {
+      task_uuid: task.uuid,
+      user_email: task.user_email,
+      status: task.status
+    })
+
     VehicleScraperWorker.perform_async(
       options = {
         vehicle_type: permited_params[:vehicle_type],
