@@ -20,6 +20,7 @@ gem 'sidekiq', '~> 6.0'
 gem 'sidekiq-status'
 gem 'throttle'
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+gem 'dotenv', '~> 2.1', '>= 2.1.1'
 
 
 group :development, :test do
