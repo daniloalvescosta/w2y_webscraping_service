@@ -25,6 +25,7 @@ services:
     environment:
       DATABASE_URL: postgres://postgres:postgres@db/w2y_webscraping_service_development
       REDIS_URL: redis://redis:6379/1
+      NOTIFICATION_SERVICE_URL: http://localhost:5000
 
   sidekiq:
     build: .
