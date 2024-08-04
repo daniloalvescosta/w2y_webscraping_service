@@ -132,6 +132,8 @@ GEM
       reline (>= 0.4.2)
     json (2.7.2)
     jsonapi-renderer (0.2.2)
+    jwt (2.8.2)
+      base64
     language_server-protocol (3.17.0.3)
     logger (1.6.0)
     loofah (2.22.0)
@@ -344,6 +346,7 @@ DEPENDENCIES
   factory_bot_rails
   faraday
   faraday-cookie_jar
+  jwt
   mechanize
   pg (~> 1.1)
   pry

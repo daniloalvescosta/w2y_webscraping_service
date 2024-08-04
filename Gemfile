@@ -18,6 +18,7 @@ gem 'throttle'
 gem 'selenium-webdriver'
 gem 'sidekiq', '~> 6.0'
 gem 'sidekiq-status'
+gem 'jwt'
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 
