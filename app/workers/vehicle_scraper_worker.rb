@@ -7,7 +7,7 @@ class VehicleScraperWorker
   include Sidekiq::Worker
 
   def perform(options = {})
-    task = Task.find(options["task"])
+    task = options["task"].nil? ? Task.find(options[:task]) : Task.find(options["task"])
     vehicles = []
     vehicle_type = options["vehicle_type"] || 'carros-novos'
     display_per_page = 50
@@ -56,7 +56,7 @@ class VehicleScraperWorker
       end
 
       task.update(status: "complete") if task.vehicles.size == 100
-      sleep(120)
+      sleep(120) if task.vehicles.size != 100
     end
   end
 end
