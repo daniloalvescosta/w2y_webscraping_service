@@ -1,4 +1,6 @@
 class VehiclesController < ApplicationController
+  before_action :authenticate_request
+
   def scrape
     task = Task.create(
       user_email: permited_params[:user_email],
