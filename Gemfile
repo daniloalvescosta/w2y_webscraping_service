@@ -26,6 +26,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop-rspec'
   gem 'shoulda-matchers', '~> 6.0'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
