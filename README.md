@@ -17,3 +17,7 @@ Caso queira rodar as migrations individualmente:
     docker compose exec web rails db:create
     docker compose exec web rails db:migrate
 
+### AVISO!
+
+Os testes deste microsservice levam 2 minutos para serem executados, a razão disso se
+dá por conta de uma regra do worker de scrapping
