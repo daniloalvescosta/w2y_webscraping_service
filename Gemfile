@@ -6,6 +6,7 @@ ruby "3.2.2"
 gem 'active_model_serializers'
 gem "bootsnap", require: false
 gem 'capybara'
+gem 'dotenv', '~> 2.1', '>= 2.1.1'
 gem 'faraday'
 gem 'faraday-cookie_jar'
 gem 'jwt'
@@ -20,7 +21,6 @@ gem 'sidekiq', '~> 6.0'
 gem 'sidekiq-status'
 gem 'throttle'
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
-gem 'dotenv', '~> 2.1', '>= 2.1.1'
 
 
 group :development, :test do
