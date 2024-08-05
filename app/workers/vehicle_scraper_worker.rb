@@ -31,6 +31,7 @@ class VehicleScraperWorker
     }
 
     (1..max_pages).each do |page|
+      sleep(60)
       url = "https://www.webmotors.com.br/api/search/car?url=https://www.webmotors.com.br/#{vehicle_type}/estoque?lkid=1000&actualPage=#{page}&displayPerPage=#{display_per_page}&order=1&showMenu=true&showCount=true&showBreadCrumb=true&testAB=false&returnUrl=false&pandora=true"
 
       begin
