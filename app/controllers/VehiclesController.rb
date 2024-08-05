@@ -4,7 +4,6 @@ class VehiclesController < ApplicationController
   def scrape
     task = Task.create(
       user_email: permited_params[:user_email],
-      user_id: permited_params[:user_id],
       uuid: SecureRandom.uuid,
       status: "pending"
       )
@@ -37,9 +36,16 @@ class VehiclesController < ApplicationController
     render json: Task.all, status: :ok
   end
 
+  def destroy_task
+    task = Task.find_by(uuid: permited_params[:uuid])
+
+    task.destroy
+    render status: :ok
+  end
+
   private
 
   def permited_params
-    params.permit(:vehicle_type, :user_id, :user_email, :uuid)
+    params.permit(:vehicle_type, :user_email, :uuid)
   end
 end

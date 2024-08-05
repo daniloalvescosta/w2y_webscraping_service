@@ -1,7 +1,6 @@
 class Task < ApplicationRecord
-  has_many :vehicles
+  has_many :vehicles, dependent: :destroy
   validates :user_email, presence: true
-  validates :user_id, presence: true
   validates :status, presence: true
   validates :uuid, presence: true
 

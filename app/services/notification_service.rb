@@ -1,6 +1,6 @@
 class NotificationService < ApplicationService
   def self.call(task_uuid, user_email, status)
-    connection = Faraday.new(url: ENV.fetch("NOTIFICATION_SERVICE_URL", "https://d1db-179-124-14-31.ngrok-free.app")) do |faraday|
+    connection = Faraday.new(url: ENV.fetch("NOTIFICATION_SERVICE_URL", "https://deep-adults-read.loca.lt")) do |faraday|
       faraday.request :json
       faraday.response :logger
       faraday.adapter Faraday.default_adapter
