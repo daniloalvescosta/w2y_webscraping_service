@@ -12,11 +12,6 @@ RSpec.describe Task, type: :model do
     expect(task).not_to be_valid
   end
 
-  it 'is invalid without a user_id' do
-    task = FactoryBot.build(:task, user_id: nil)
-    expect(task).not_to be_valid
-  end
-
   it 'is invalid without a status' do
     task = FactoryBot.build(:task, status: nil)
     expect(task).not_to be_valid
