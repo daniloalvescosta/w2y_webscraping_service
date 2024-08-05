@@ -1,8 +1,30 @@
-## **W2Y Auth Service**
+# WY2 WebScrapping service
+![W2Y logo](https://github.com/daniloalvescosta/w2y_auth_service/blob/main/app/assets/images/w2y.png)
 
-![W2Y logo](https://github.com/daniloalvescosta/w2y_webscraping_service/blob/main/app/w2y.png)
+### Sobre o W2Y
+O W2Y ou **"WebScrapping2You"** é um projeto focado em realizar webscrapping da webmotors, este projeto é dividido em quatro partes, sendo o repositório atual uma delas.
 
-Serviço de webscrapping do sistema W2Y, para executar ele rode os comandos:
+### Outros microsservicos
+
+ - 🔒Microsservice de autenticação:
+https://github.com/daniloalvescosta/w2y_auth_service
+
+- 👾Microsservice de webscrapping:
+https://github.com/daniloalvescosta/w2y_webscraping_service
+
+- 💡Microsservice de notificação:
+https://github.com/daniloalvescosta/w2y_notification_service
+
+- 🎨Front-end:
+https://github.com/daniloalvescosta/w2y_frontend
+
+### Documentação e Collections 🤓
+- A documentação do projeto pode ser encontrada aqui: 
+https://w2y.readme.io/docs/getting-started
+- Já a collection do Postman pode ser baixada aqui: https://github.com/daniloalvescosta/w2y_frontend/blob/main/W2Y.postman_collection.json
+
+### Como Executar o projeto? 🤔
+Para rodar o Microsservice é simples, basta executar os comandos abaixo:
 
     docker compose build
     docker compose up
@@ -14,10 +36,5 @@ Caso queira rodar a suit de testes individualmente:
 
 Caso queira rodar as migrations individualmente:
 
-    docker compose exec web rails db:create
-    docker compose exec web rails db:migrate
-
-### AVISO!
-
-Os testes deste microsservice levam 2 minutos para serem executados, a razão disso se
-dá por conta de uma regra do worker de scrapping
+	docker compose exec web rails db:create
+	docker compose exec web rails db:migrate
